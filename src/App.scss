@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800");
+$mobile: 736px;
+$tablet: 1024px;
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+}
+
+header {
+  width: 100%;
+  background-image: url("./assets/images/dk2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 120px 0;
+  text-align: center;
+
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+    background-image: url("./assets/images/dk2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px 0;
+    text-align: center;
+    //do Smth
+  }
+  @media screen and (min-width: $tablet) {
+    //do Smth
+  }
+}
+
+.header_menu {
+  margin: 15px;
+  a {
+    font-size: x-large;
+    color: #70510c;
+  }
+}
+p {
+  font-size: calc(18px + 2vmin);
+  margin: 10px;
+}
+
+.form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    font-size: calc(12px + 2vmin);
+  }
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  @media screen and (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+  }
+  input {
+    padding: 12px 20px;
+    margin: 18px 0;
+    box-sizing: border-box;
+  }
+  button {
+    width: 50%;
+  }
+}
+
+.info {
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.info #list {
+  width: 130%;
+  display: inline-block;
+  padding: 20px 2%;
+  margin-left: 5%;
+  vertical-align: top;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.info #list li {
+  list-style: none;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.info #result {
+  margin-left: 5%;
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 0 2% 20px;
+}
+
+.info .hide {
+  display: none !important;
+}
+/* CSS CARD CINEMA  */
+
+.movie_card {
+  position: relative;
+  display: block;
+  width: 800px;
+  height: 450px;
+  margin: 80px auto;
+  overflow: scroll;
+  border-radius: 10px;
+  transition: all 0.4s;
+  box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 80px -25px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s;
+  }
+  .info_section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-blend-mode: multiply;
+    z-index: 2;
+    border-radius: 10px;
+    .movie_header {
+      position: relative;
+      padding: 25px;
+      height: 40%;
+      h1 {
+        color: black;
+        font-weight: 300;
+      }
+      h4 {
+        color: #555;
+        font-weight: 200;
+      }
+      .minutes {
+        display: inline-block;
+        margin-top: 15px;
+        color: #555;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .type {
+        display: inline-block;
+        color: #959595;
+        margin-left: 10px;
+        font-size: calc(8px + 2vmin);
+      }
+      .locandina {
+        position: relative;
+        float: left;
+        margin-right: 20px;
+        height: 120px;
+        box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+      }
+    }
+    .movie_desc {
+      padding: 25px;
+      height: 50%;
+      .text {
+        color: #545454;
+        font-size: calc(8px + 2vmin);
+        text-align: justify;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .movie_header {
+    width: 75%;
+  }
+
+  .movie_desc {
+    width: 110%;
+  }
+
+  .info_section {
+    background: linear-gradient(to right, #e5e6e6 50%, transparent 100%);
+  }
+
+  .blur_back {
+    width: 80%;
+    background-position: -100% 10% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .movie_card {
+    width: 95%;
+    margin: 70px auto;
+    min-height: 350px;
+    height: auto;
+  }
+
+  .movie_header {
+    width: 100%;
+    margin-top: 85px;
+  }
+
+  .movie_desc {
+    width: 100%;
+  }
+
+  .info_section {
+    background: linear-gradient(to top, #e5e6e6 50%, transparent 100%);
+    display: inline-grid;
+  }
+}
